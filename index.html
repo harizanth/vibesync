@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VIBESYNC — Where groups come alive. AI-powered shared experiences that detect group energy and keep everyone engaged.">
+  <title>VIBESYNC — Where Groups Come Alive</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- ===== PARTICLES BACKGROUND ===== -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ========================================================
+       1. LANDING PAGE
+       ======================================================== -->
+  <section id="landing-page" class="page active">
+    <!-- Navigation -->
+    <nav class="landing-nav" id="landing-nav">
+      <div class="nav-logo">
+        <div class="nav-logo-icon">⚡</div>
+        <span>VIBESYNC</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-ghost" onclick="App.showPage('auth-page', 'login')">Log In</button>
+        <button class="btn btn-primary" onclick="App.showPage('auth-page', 'signup')">Get Started</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <!-- ROBO Mascot -->
+      <div class="robo-landing" id="robo-landing">
+        <div class="robo-glow-ring"></div>
+        <div class="robo-glow-ring"></div>
+        <div class="robo-body">
+          <svg class="robo-svg" viewBox="0 0 200 200" id="robo-hero-svg">
+            <!-- Antenna -->
+            <line x1="100" y1="30" x2="100" y2="10" stroke="#a855f7" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="100" cy="8" r="5" fill="#a855f7" class="robo-antenna-tip">
+              <animate attributeName="fill" values="#a855f7;#22d3ee;#ec4899;#a855f7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Head -->
+            <rect x="55" y="30" width="90" height="75" rx="20" fill="#141432" stroke="#a855f7" stroke-width="2"/>
+            <!-- Face screen -->
+            <rect x="65" y="40" width="70" height="45" rx="12" fill="#0a0a1a" stroke="rgba(168,85,247,0.3)" stroke-width="1"/>
+            <!-- Left Eye -->
+            <g class="robo-eye-left">
+              <circle cx="85" cy="60" r="10" fill="#06b6d4">
+                <animate attributeName="fill" values="#06b6d4;#a855f7;#06b6d4" dur="4s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="85" cy="58" r="4" fill="white" opacity="0.9"/>
+              <animateTransform attributeName="transform" type="scale" values="1,1;1,0.1;1,1" dur="4s" repeatCount="indefinite" begin="2s" additive="sum" origin="85 60"/>
+            </g>
+            <!-- Right Eye -->
+            <g class="robo-eye-right">
+              <circle cx="115" cy="60" r="10" fill="#06b6d4">
+                <animate attributeName="fill" values="#06b6d4;#a855f7;#06b6d4" dur="4s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="115" cy="58" r="4" fill="white" opacity="0.9"/>
+              <animateTransform attributeName="transform" type="scale" values="1,1;1,0.1;1,1" dur="4s" repeatCount="indefinite" begin="2s" additive="sum" origin="115 60"/>
+            </g>
+            <!-- Mouth (smile) -->
+            <path d="M85 75 Q100 88 115 75" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" id="robo-mouth"/>
+            <!-- Body -->
+            <rect x="70" y="108" width="60" height="50" rx="12" fill="#141432" stroke="#a855f7" stroke-width="2"/>
+            <!-- Chest light -->
+            <circle cx="100" cy="130" r="8" fill="#a855f7" opacity="0.6">
+              <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Arms -->
+            <rect x="48" y="115" width="18" height="8" rx="4" fill="#141432" stroke="#a855f7" stroke-width="1.5"/>
+            <rect x="134" y="115" width="18" height="8" rx="4" fill="#141432" stroke="#a855f7" stroke-width="1.5">
+              <animateTransform attributeName="transform" type="rotate" values="0 143 119;-10 143 119;10 143 119;0 143 119" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <!-- Feet -->
+            <rect x="76" y="160" width="20" height="10" rx="5" fill="#141432" stroke="#a855f7" stroke-width="1.5"/>
+            <rect x="104" y="160" width="20" height="10" rx="5" fill="#141432" stroke="#a855f7" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-badge">
+        <span>🤖</span> Powered by ECHO AI
+      </div>
+
+      <h1><span class="gradient-text">VIBESYNC</span></h1>
+      <p class="hero-subtitle">
+        Where groups come alive. Our AI reads your group's energy in real-time, 
+        prevents boring moments before they happen, and turns every session into 
+        an unforgettable shared experience.
+      </p>
+
+      <div class="hero-cta">
+        <button class="btn btn-primary btn-xl" onclick="App.showPage('auth-page', 'signup')">
+          ⚡ Enter the Vibe
+        </button>
+        <button class="btn btn-secondary btn-lg" onclick="App.showPage('auth-page', 'login')">
+          Watch Demo
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="stat-groups">2,847</div>
+          <div class="hero-stat-label">Active Groups</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="stat-sessions">14.2K</div>
+          <div class="hero-stat-label">Sessions This Week</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="stat-vibe">97%</div>
+          <div class="hero-stat-label">Vibe Retention</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section" id="features">
+      <div class="section-header">
+        <div class="section-badge">✨ Features</div>
+        <h2 class="section-title">Everything Your Group <span class="gradient-text">Actually Needs</span></h2>
+        <p class="section-subtitle">Not another messaging app. A living, breathing social space that understands your group.</p>
+      </div>
+
+      <div class="features-grid stagger-children">
+        <div class="card feature-card">
+          <div class="feature-icon purple">🤖</div>
+          <h3>ROBO — Your AI Host</h3>
+          <p>A personality-driven AI mascot that greets you by name, remembers your history, narrates sessions like a sports commentator, and interrupts boring moments with games.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon amber">👻</div>
+          <h3>Ghost Crown System</h3>
+          <p>Silent too long? AI detects it, crowns you with a hilarious title like "Lord of the AFK Realm," and drops a dare. Complete it to redeem yourself — or the crown gets bigger.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon pink">🎲</div>
+          <h3>Chaos Cards</h3>
+          <p>Once per session, any member can play a Chaos Card to completely flip the format. Become the co-creator of your group experience, not just a participant.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon cyan">🚨</div>
+          <h3>Boredom Engine</h3>
+          <p>When ECHO detects dead chat, ROBO deploys Emergency Fun Protocol — auto-launching mini-games like Lightning Round, Hot Seat Roulette, and Plot Twist.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon purple">⚖️</div>
+          <h3>AI Judge</h3>
+          <p>After dares and games, ROBO transforms into Judge Mode. The jury votes, ROBO delivers a hilarious verdict, and losers join the Wall of Shame in the Memory Palace.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon amber">🔮</div>
+          <h3>Prophecy System</h3>
+          <p>At session start, ROBO makes wild predictions about your group. At the end, check which ones came true. Hilarious accountability and inside joke fuel.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 48px 24px; border-top: 1px solid var(--border-subtle); color: var(--text-muted); font-size: var(--text-sm);">
+      <p>© 2026 VIBESYNC. Made with ⚡ and a lot of vibes.</p>
+    </footer>
+  </section>
+
+  <!-- ========================================================
+       2. AUTH PAGE (Login / Signup)
+       ======================================================== -->
+  <section id="auth-page" class="page">
+    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;">
+      <div class="onboarding-card glass" style="max-width: 440px;">
+        <!-- Login Form -->
+        <div id="auth-login" class="auth-form">
+          <div style="text-align: center; margin-bottom: 32px;">
+            <div class="nav-logo" style="justify-content: center; margin-bottom: 16px;">
+              <div class="nav-logo-icon">⚡</div>
+              <span>VIBESYNC</span>
+            </div>
+            <h2 class="onboarding-title">Welcome back!</h2>
+            <p class="onboarding-subtitle" style="margin-bottom: 0;">Your group is waiting for you.</p>
+          </div>
+          <div class="input-group" style="margin-bottom: 16px;">
+            <label class="input-label" for="login-email">Email</label>
+            <input type="email" id="login-email" class="input-field" placeholder="you@vibesync.com">
+          </div>
+          <div class="input-group" style="margin-bottom: 24px;">
+            <label class="input-label" for="login-password">Password</label>
+            <input type="password" id="login-password" class="input-field" placeholder="Enter your password">
+          </div>
+          <button class="btn btn-primary btn-lg" style="width: 100%;" onclick="App.handleLogin()">
+            Log In
+          </button>
+          <p style="text-align: center; margin-top: 20px; font-size: var(--text-sm); color: var(--text-secondary);">
+            Don't have an account? <a href="#" onclick="App.toggleAuth('signup')">Sign up</a>
+          </p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="auth-signup" class="auth-form" style="display: none;">
+          <div style="text-align: center; margin-bottom: 32px;">
+            <div class="nav-logo" style="justify-content: center; margin-bottom: 16px;">
+              <div class="nav-logo-icon">⚡</div>
+              <span>VIBESYNC</span>
+            </div>
+            <h2 class="onboarding-title">Join the Vibe</h2>
+            <p class="onboarding-subtitle" style="margin-bottom: 0;">Create your account and find your people.</p>
+          </div>
+          <div class="input-group" style="margin-bottom: 16px;">
+            <label class="input-label" for="signup-name">Display Name</label>
+            <input type="text" id="signup-name" class="input-field" placeholder="What should we call you?">
+          </div>
+          <div class="input-group" style="margin-bottom: 16px;">
+            <label class="input-label" for="signup-email">Email</label>
+            <input type="email" id="signup-email" class="input-field" placeholder="you@vibesync.com">
+          </div>
+          <div class="input-group" style="margin-bottom: 24px;">
+            <label class="input-label" for="signup-password">Password</label>
+            <input type="password" id="signup-password" class="input-field" placeholder="Create a password (min 8 chars)">
+          </div>
+          <button class="btn btn-primary btn-lg" style="width: 100%;" onclick="App.handleSignup()">
+            ⚡ Create Account
+          </button>
+          <p style="text-align: center; margin-top: 20px; font-size: var(--text-sm); color: var(--text-secondary);">
+            Already have an account? <a href="#" onclick="App.toggleAuth('login')">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3. ONBOARDING PAGE
+       ======================================================== -->
+  <section id="onboarding-page" class="page">
+    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;">
+      <div class="onboarding-card glass">
+        <!-- Progress -->
+        <div class="onboarding-progress">
+          <div class="onboarding-step-indicator active" id="step-1-indicator"></div>
+          <div class="onboarding-step-indicator" id="step-2-indicator"></div>
+          <div class="onboarding-step-indicator" id="step-3-indicator"></div>
+        </div>
+
+        <!-- Step 1: Avatar & Name -->
+        <div class="onboarding-step active" id="onboard-step-1">
+          <h2 class="onboarding-title">Let's set up your vibe ✨</h2>
+          <p class="onboarding-subtitle">Choose an avatar and nickname that represents you.</p>
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">
+            <div class="avatar avatar-xl" id="onboard-avatar" style="cursor: pointer; font-size: 40px;" onclick="App.cycleAvatar()">
+              😎
+            </div>
+          </div>
+          <p style="text-align: center; font-size: var(--text-xs); color: var(--text-muted); margin-bottom: 20px;">Click to change avatar</p>
+          <div class="input-group">
+            <label class="input-label" for="onboard-nickname">Nickname</label>
+            <input type="text" id="onboard-nickname" class="input-field" placeholder="Your epic display name">
+          </div>
+          <div class="onboarding-actions">
+            <button class="btn btn-primary btn-lg" onclick="App.nextOnboardStep(2)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Vibe Personality -->
+        <div class="onboarding-step" id="onboard-step-2">
+          <h2 class="onboarding-title">What's your vibe? 🎭</h2>
+          <p class="onboarding-subtitle">This helps ROBO understand how to interact with you.</p>
+          <div class="vibe-personality-grid">
+            <div class="vibe-personality-option" onclick="App.selectVibe(this, 'hype')">
+              <span class="emoji">🔥</span>
+              <span class="label">The Hype Machine</span>
+              <span class="desc">Always energetic, first to react</span>
+            </div>
+            <div class="vibe-personality-option" onclick="App.selectVibe(this, 'chill')">
+              <span class="emoji">🧊</span>
+              <span class="label">The Chill One</span>
+              <span class="desc">Laid back, goes with the flow</span>
+            </div>
+            <div class="vibe-personality-option" onclick="App.selectVibe(this, 'chaos')">
+              <span class="emoji">🎲</span>
+              <span class="label">The Chaos Agent</span>
+              <span class="desc">Loves randomness and dares</span>
+            </div>
+            <div class="vibe-personality-option" onclick="App.selectVibe(this, 'brain')">
+              <span class="emoji">🧠</span>
+              <span class="label">The Big Brain</span>
+              <span class="desc">Thoughtful, loves deep talks</span>
+            </div>
+          </div>
+          <div class="onboarding-actions">
+            <button class="btn btn-secondary btn-lg" onclick="App.nextOnboardStep(1)">← Back</button>
+            <button class="btn btn-primary btn-lg" onclick="App.nextOnboardStep(3)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Create or Join Group -->
+        <div class="onboarding-step" id="onboard-step-3">
+          <h2 class="onboarding-title">Find your crew 🤝</h2>
+          <p class="onboarding-subtitle">Create a new group or join an existing one.</p>
+          <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+            <div class="card" style="cursor: pointer; text-align: center; padding: 32px;" onclick="App.onboardCreateGroup()">
+              <div style="font-size: 40px; margin-bottom: 12px;">🚀</div>
+              <h3 style="margin-bottom: 4px;">Create a Group</h3>
+              <p style="font-size: var(--text-sm); color: var(--text-secondary);">Start a new crew and invite friends</p>
+            </div>
+            <div class="card" style="cursor: pointer; text-align: center; padding: 32px;" onclick="App.onboardJoinGroup()">
+              <div style="font-size: 40px; margin-bottom: 12px;">🔗</div>
+              <h3 style="margin-bottom: 4px;">Join a Group</h3>
+              <p style="font-size: var(--text-sm); color: var(--text-secondary);">Enter an invite code</p>
+            </div>
+          </div>
+          <div class="onboarding-actions">
+            <button class="btn btn-secondary btn-lg" onclick="App.nextOnboardStep(2)">← Back</button>
+            <button class="btn btn-ghost" onclick="App.skipOnboarding()">Skip for now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4. DASHBOARD PAGE
+       ======================================================== -->
+  <section id="dashboard-page" class="page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="nav-logo-icon">⚡</div>
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: var(--text-lg);">VIBESYNC</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Main</div>
+          <div class="sidebar-item active" onclick="App.switchDashboardTab('home')" data-tab="home">
+            <span class="sidebar-item-icon">🏠</span>
+            <span>Home</span>
+          </div>
+          <div class="sidebar-item" onclick="App.switchDashboardTab('sessions')" data-tab="sessions">
+            <span class="sidebar-item-icon">💬</span>
+            <span>Sessions</span>
+            <span class="sidebar-item-badge">3</span>
+          </div>
+          <div class="sidebar-item" onclick="App.switchDashboardTab('leaderboard')" data-tab="leaderboard">
+            <span class="sidebar-item-icon">🏆</span>
+            <span>Leaderboard</span>
+          </div>
+          <div class="sidebar-item" onclick="App.switchDashboardTab('memory')" data-tab="memory">
+            <span class="sidebar-item-icon">🏛️</span>
+            <span>Memory Palace</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Community</div>
+          <div class="sidebar-item" onclick="App.switchDashboardTab('director')" data-tab="director">
+            <span class="sidebar-item-icon">🎬</span>
+            <span>Director's Chair</span>
+          </div>
+          <div class="sidebar-item" onclick="App.switchDashboardTab('confessional')" data-tab="confessional">
+            <span class="sidebar-item-icon">🎤</span>
+            <span>Confessional</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Settings</div>
+          <div class="sidebar-item" onclick="App.switchDashboardTab('settings')" data-tab="settings">
+            <span class="sidebar-item-icon">⚙️</span>
+            <span>Settings</span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user" onclick="App.switchDashboardTab('settings')">
+          <div class="avatar avatar-sm" id="sidebar-avatar">😎</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name" id="sidebar-username">User</div>
+            <div class="sidebar-user-status">🟢 Online</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Mobile menu toggle -->
+      <button class="btn btn-icon btn-secondary" id="mobile-menu-btn" style="display: none; position: fixed; top: 16px; left: 16px; z-index: 25;" onclick="App.toggleSidebar()">☰</button>
+
+      <!-- ===== HOME TAB ===== -->
+      <div class="dashboard-tab active" id="tab-home">
+        <div class="main-header">
+          <div class="main-greeting">
+            <h1 id="greeting-text">Good morning! 👋</h1>
+            <p id="greeting-sub">Your vibes are looking strong today.</p>
+          </div>
+          <button class="btn btn-primary" onclick="App.openCreateSession()">
+            ➕ New Session
+          </button>
+        </div>
+
+        <!-- ROBO Widget -->
+        <div class="robo-widget" onclick="App.talkToRobo()">
+          <div class="robo-widget-avatar">
+            <svg viewBox="0 0 48 48" width="48" height="48">
+              <rect x="8" y="8" width="32" height="28" rx="8" fill="#141432" stroke="#a855f7" stroke-width="1.5"/>
+              <circle cx="18" cy="20" r="4" fill="#06b6d4"/>
+              <circle cx="30" cy="20" r="4" fill="#06b6d4"/>
+              <circle cx="18" cy="19" r="1.5" fill="white"/>
+              <circle cx="30" cy="19" r="1.5" fill="white"/>
+              <path d="M18 28 Q24 33 30 28" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="24" y1="5" x2="24" y2="1" stroke="#a855f7" stroke-width="2"/>
+              <circle cx="24" cy="0" r="2" fill="#a855f7"/>
+            </svg>
+          </div>
+          <div class="robo-widget-bubble" id="robo-bubble">
+            <span id="robo-message">Hey there! Ready for some fun today? Click me for a surprise! 🎉</span>
+          </div>
+        </div>
+
+        <!-- Active Sessions -->
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <h2 style="font-size: var(--text-xl);">Active Sessions</h2>
+            <span class="badge badge-green">3 Live</span>
+          </div>
+          <div class="sessions-grid" id="sessions-grid">
+            <!-- Sessions populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SESSIONS TAB ===== -->
+      <div class="dashboard-tab" id="tab-sessions" style="display: none;">
+        <div class="main-header">
+          <div class="main-greeting">
+            <h1>Your Sessions 💬</h1>
+            <p>All your active and past group sessions.</p>
+          </div>
+          <button class="btn btn-primary" onclick="App.openCreateSession()">➕ New Session</button>
+        </div>
+        <div class="sessions-grid" id="all-sessions-grid"></div>
+      </div>
+
+      <!-- ===== LEADERBOARD TAB ===== -->
+      <div class="dashboard-tab" id="tab-leaderboard" style="display: none;">
+        <div class="main-header">
+          <div class="main-greeting">
+            <h1>Community League 🏆</h1>
+            <p>Top groups ranked by Vibe Score — not just activity.</p>
+          </div>
+          <div class="tabs">
+            <div class="tab active" onclick="App.switchLeaderboardPeriod('weekly')">Weekly</div>
+            <div class="tab" onclick="App.switchLeaderboardPeriod('monthly')">Monthly</div>
+            <div class="tab" onclick="App.switchLeaderboardPeriod('alltime')">All Time</div>
+          </div>
+        </div>
+        <div class="leaderboard-container" id="leaderboard-content"></div>
+      </div>
+
+      <!-- ===== MEMORY PALACE TAB ===== -->
+      <div class="dashboard-tab" id="tab-memory" style="display: none;">
+        <div class="main-header">
+          <div class="main-greeting">
+            <h1>Memory Palace 🏛️</h1>
+            <p>Every legendary moment, dare, and verdict — preserved forever.</p>
+          </div>
+        </div>
+        <div class="memory-timeline" id="memory-timeline"></div>
+      </div>
+
+      <!-- ===== DIRECTOR'S CHAIR TAB ===== -->
+      <div class="dashboard-tab" id="tab-director" style="display: none;">
+        <div class="main-header">
+          <div class="main-greeting">
+            <h1>Director's Chair 🎬</h1>
+            <p>This week's director controls the session format.</p>
+          </div>
+        </div>
+        <div id="director-content"></div>
+      </div>
+
+      <!-- ===== CONFESSIONAL TAB ===== -->
+      <div class="dashboard-tab" id="tab-confessional" style="display: none;">
+        <div class="main-header">
+          <div class="main-greeting">
+            <h1>Confessional Booth 🎤</h1>
+            <p>Anonymous confessions. React first, reveal later.</p>
+          </div>
+        </div>
+        <div id="confessional-content"></div>
+      </div>
+
+      <!-- ===== SETTINGS TAB ===== -->
+      <div class="dashboard-tab" id="tab-settings" style="display: none;">
+        <div class="main-header">
+          <div class="main-greeting">
+            <h1>Settings ⚙️</h1>
+            <p>Customize your VIBESYNC experience.</p>
+          </div>
+        </div>
+        <div class="settings-layout" id="settings-content"></div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ========================================================
+       5. SESSION ROOM PAGE
+       ======================================================== -->
+  <section id="session-page" class="page">
+    <!-- Top Bar -->
+    <div class="session-topbar">
+      <div class="session-topbar-left">
+        <button class="btn btn-icon btn-ghost" onclick="App.leaveSession()" data-tooltip="Leave Session">
+          ←
+        </button>
+        <div class="session-topbar-info">
+          <h3 id="session-room-name">The Chaos Crew</h3>
+          <p id="session-room-members">5 members • Session active</p>
+        </div>
+      </div>
+      <div class="session-topbar-center">
+        <div class="vibe-meter">
+          <span class="vibe-meter-label">Vibe</span>
+          <div class="vibe-meter-dots">
+            <div class="vibe-meter-dot active"></div>
+            <div class="vibe-meter-dot active"></div>
+            <div class="vibe-meter-dot active"></div>
+            <div class="vibe-meter-dot active"></div>
+            <div class="vibe-meter-dot"></div>
+          </div>
+          <span class="vibe-meter-value" id="vibe-score">82%</span>
+        </div>
+        <div class="vibe-pulse-bar">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="session-topbar-right">
+        <button class="btn btn-icon btn-ghost" onclick="App.toggleSessionPanel()" data-tooltip="Members">👥</button>
+        <button class="btn btn-icon btn-ghost" onclick="App.showProphecy()" data-tooltip="Prophecy">🔮</button>
+        <button class="btn btn-danger btn-icon" onclick="App.leaveSession()" data-tooltip="Leave" style="font-size: 14px;">✕</button>
+      </div>
+    </div>
+
+    <!-- Main Session Area -->
+    <div class="session-main">
+      <!-- Chat Area -->
+      <div class="chat-area">
+        <div class="chat-messages" id="chat-messages">
+          <!-- Chat messages populated by JS -->
+          <div class="chat-system-message">Session started — ROBO is warming up! 🤖</div>
+        </div>
+
+        <!-- Ghost Crown Alert (hidden by default) -->
+        <div class="ghost-crown-alert" id="ghost-crown-alert" style="display: none;">
+          <h4>👻 GHOST ALERT!</h4>
+          <p id="ghost-crown-target">@Someone has been silent for 8 mins!</p>
+          <div class="ghost-crown-options">
+            <button class="btn btn-primary" onclick="Session.handleDare('ai')">🤖 AI Dare</button>
+            <button class="btn btn-secondary" onclick="Session.handleDare('manual')">✍️ Manual Dare</button>
+            <button class="btn btn-secondary" onclick="Session.handleDare('wildcard')">🎲 Wild Card</button>
+          </div>
+        </div>
+
+        <!-- Boredom Alert (hidden by default) -->
+        <div class="boredom-alert" id="boredom-alert" style="display: none;">
+          <div class="boredom-level">
+            <span>🚨</span>
+            <span style="font-weight: 700; font-size: var(--text-sm);">BOREDOM LEVEL: CRITICAL</span>
+            <span>🚨</span>
+          </div>
+          <div class="boredom-level-bar">
+            <div class="boredom-level-fill" style="width: 90%;"></div>
+          </div>
+          <p style="margin: 12px 0; font-size: var(--text-sm); color: var(--text-secondary);">ROBO IS DEPLOYING EMERGENCY FUN PROTOCOL...</p>
+          <button class="btn btn-primary" onclick="Session.launchEmergencyGame()">🎮 Launch Game NOW</button>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+          <div class="chat-quick-reactions">
+            <span class="quick-reaction" onclick="Session.quickReact('😂')">😂</span>
+            <span class="quick-reaction" onclick="Session.quickReact('🔥')">🔥</span>
+            <span class="quick-reaction" onclick="Session.quickReact('❤️')">❤️</span>
+            <span class="quick-reaction" onclick="Session.quickReact('💀')">💀</span>
+            <span class="quick-reaction" onclick="Session.quickReact('👀')">👀</span>
+            <span class="quick-reaction" onclick="Session.quickReact('⚡')">⚡</span>
+            <span class="quick-reaction" onclick="Session.quickReact('🎯')">🎯</span>
+            <span class="quick-reaction" onclick="Session.quickReact('👑')">👑</span>
+          </div>
+          <div class="chat-input-bar">
+            <div class="chat-input-actions">
+              <button onclick="Session.toggleEmoji()" data-tooltip="Emoji">😊</button>
+              <button onclick="Session.attachFile()" data-tooltip="Attach">📎</button>
+            </div>
+            <input type="text" class="chat-input" id="chat-input" placeholder="Type a message..." onkeydown="if(event.key==='Enter')Session.sendMessage()">
+            <button class="chat-send-btn" onclick="Session.sendMessage()">
+              ➤
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="session-panel" id="session-panel">
+        <div class="session-panel-header">
+          <div class="tabs" style="width: 100%;">
+            <div class="tab active" onclick="App.switchPanelTab('members')">Members</div>
+            <div class="tab" onclick="App.switchPanelTab('activity')">Activity</div>
+          </div>
+        </div>
+
+        <!-- Members Section -->
+        <div class="session-panel-section" id="panel-members">
+          <div class="session-panel-section-title">Online — 5</div>
+          <div class="members-list" id="members-list">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Chaos Card Section -->
+        <div class="session-panel-section">
+          <div class="session-panel-section-title">Power Cards</div>
+          <div class="chaos-card-btn" onclick="Session.playChaosCard()">
+            <span class="emoji">🎲</span>
+            <span class="label">Play Chaos Card</span>
+            <span class="sub">1 remaining this session</span>
+          </div>
+        </div>
+
+        <!-- Group Health Section -->
+        <div class="session-panel-section">
+          <div class="session-panel-section-title">Group Health</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: var(--text-xs); margin-bottom: 4px;">
+                <span>Energy Level</span>
+                <span id="energy-level">High ⚡</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="energy-bar" style="width: 82%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: var(--text-xs); margin-bottom: 4px;">
+                <span>Participation</span>
+                <span id="participation-level">4/5 active</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%; background: var(--gradient-cyan);"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: var(--text-xs); margin-bottom: 4px;">
+                <span>Vibe Streak</span>
+                <span>🔥 12 min</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, var(--amber), var(--pink));"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       6. GAME OVERLAY
+       ======================================================== -->
+  <div class="game-overlay" id="game-overlay">
+    <div class="game-container">
+      <div class="game-header">
+        <div style="font-size: 40px; margin-bottom: 8px;" id="game-emoji">⚡</div>
+        <h2 class="game-title" id="game-title">Lightning Round</h2>
+        <p class="game-subtitle" id="game-subtitle">60 seconds. Rapid fire. First to answer wins!</p>
+      </div>
+      <div class="game-body">
+        <div class="game-timer" id="game-timer">
+          <span>⏱️</span>
+          <span id="game-timer-value">60</span>
+          <span style="font-size: var(--text-sm);">sec</span>
+        </div>
+        <div class="game-question" id="game-question">
+          Loading question...
+        </div>
+        <div class="game-options" id="game-options">
+          <!-- Options populated by JS -->
+        </div>
+      </div>
+      <div class="game-footer">
+        <div class="game-scores" id="game-scores"></div>
+        <button class="btn btn-ghost" onclick="Games.closeGame()">Exit Game</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       7. AI JUDGE OVERLAY
+       ======================================================== -->
+  <div class="judge-overlay" id="judge-overlay">
+    <div class="judge-container">
+      <div class="judge-gavel">🔨</div>
+      <h2 class="judge-title">JUDGE ROBO PRESIDING</h2>
+      <div class="judge-dare-desc" id="judge-dare-desc">
+        "Dare details will appear here..."
+      </div>
+      <h3 style="margin-bottom: 16px; font-size: var(--text-md); color: var(--text-muted);">JURY VERDICT</h3>
+      <div class="judge-votes" id="judge-votes">
+        <!-- Votes populated by JS -->
+      </div>
+      <div class="judge-verdict" id="judge-verdict">
+        <p class="judge-verdict-text" id="judge-verdict-text">
+          "The verdict will be delivered..."
+        </p>
+      </div>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button class="btn btn-primary" onclick="AIJudge.close()">Accept Verdict ⚖️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       8. PROPHECY OVERLAY
+       ======================================================== -->
+  <div class="modal-overlay" id="prophecy-overlay">
+    <div class="modal" style="max-width: 580px;">
+      <div class="prophecy-container" style="padding: 0;">
+        <div class="prophecy-crystal">🔮</div>
+        <h2 class="prophecy-title gradient-text">ROBO'S PROPHECY</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: var(--text-sm);">These predictions were made at session start. Let's see what comes true...</p>
+        <div class="prophecy-list" id="prophecy-list">
+          <!-- Populated by JS -->
+        </div>
+        <button class="btn btn-primary" style="margin-top: 24px;" onclick="App.closeProphecy()">Interesting... 🤔</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       9. CREATE SESSION MODAL
+       ======================================================== -->
+  <div class="modal-overlay" id="create-session-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Create a Session 🚀</h3>
+        <button class="modal-close" onclick="App.closeCreateSession()">✕</button>
+      </div>
+      <div class="input-group" style="margin-bottom: 16px;">
+        <label class="input-label" for="session-name-input">Session Name</label>
+        <input type="text" id="session-name-input" class="input-field" placeholder="e.g., Friday Night Chaos">
+      </div>
+      <div class="input-group" style="margin-bottom: 16px;">
+        <label class="input-label">Session Vibe</label>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <div class="chip selected" onclick="App.selectSessionVibe(this)">🔥 High Energy</div>
+          <div class="chip" onclick="App.selectSessionVibe(this)">🧊 Chill</div>
+          <div class="chip" onclick="App.selectSessionVibe(this)">🎲 Chaotic</div>
+          <div class="chip" onclick="App.selectSessionVibe(this)">🧠 Deep Talk</div>
+          <div class="chip" onclick="App.selectSessionVibe(this)">🎮 Game Night</div>
+        </div>
+      </div>
+      <div class="input-group" style="margin-bottom: 24px;">
+        <label class="input-label" for="session-invite-input">Invite Friends (optional)</label>
+        <input type="text" id="session-invite-input" class="input-field" placeholder="Enter email or username">
+        <span class="input-helper">You can always invite more people later.</span>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <button class="btn btn-secondary btn-lg" style="flex: 1;" onclick="App.closeCreateSession()">Cancel</button>
+        <button class="btn btn-primary btn-lg" style="flex: 1;" onclick="App.createSession()">🚀 Launch Session</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       10. CHAOS CARD OVERLAY
+       ======================================================== -->
+  <div class="modal-overlay" id="chaos-overlay">
+    <div class="modal" style="text-align: center; max-width: 480px;">
+      <div style="font-size: 64px; margin-bottom: 16px; animation: shake 0.5s infinite;">🎲</div>
+      <h2 style="font-size: var(--text-2xl); margin-bottom: 8px;">CHAOS CARD PLAYED!</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 24px;" id="chaos-card-desc">The format is about to flip...</p>
+      <div class="card" style="margin-bottom: 24px; padding: 24px;">
+        <div style="font-size: 40px; margin-bottom: 12px;" id="chaos-card-emoji">🎭</div>
+        <h3 id="chaos-card-title">Loading...</h3>
+        <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-top: 8px;" id="chaos-card-detail">Details loading...</p>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="Session.acceptChaos()">Let's Go! 🔥</button>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       11. SPIN WHEEL MODAL
+       ======================================================== -->
+  <div class="modal-overlay" id="spin-overlay">
+    <div class="modal" style="text-align: center; max-width: 400px;">
+      <h2 style="margin-bottom: 24px;">🎲 Wheel of Chaos</h2>
+      <div class="spin-wheel-container">
+        <div class="spin-wheel-pointer">▼</div>
+        <div class="spin-wheel" id="spin-wheel">
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 40px; pointer-events: none;">🎯</div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg" style="margin-top: 24px;" id="spin-btn" onclick="Session.spinWheel()">SPIN! 🎡</button>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/robo.js"></script>
+  <script src="js/session.js"></script>
+  <script src="js/games.js"></script>
+  <script src="js/social.js"></script>
+</body>
+</html>
