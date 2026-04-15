@@ -48,7 +48,7 @@ const App = {
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.feature-card').forEach(card => observer.observe(card));
+    document.querySelectorAll('.feature-card, .step-card, .community-card').forEach(card => observer.observe(card));
   },
 
   setupResponsive() {
